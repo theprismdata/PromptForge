@@ -2,13 +2,13 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-WORKSPACE_DIR="${ROOT_DIR}/workspace"
+SOURCES_DIR="${ROOT_DIR}/sources"
 
-# Defaults use local workspace paths in this repository.
-ASSISTAI_SRC_DIR="${ASSISTAI_SRC_DIR:-${WORKSPACE_DIR}/assistai-src}"
-ECLIPSE_UI_SRC_DIR="${ECLIPSE_UI_SRC_DIR:-${WORKSPACE_DIR}/eclipse-platform-ui}"
+# Defaults use local source paths in this repository.
+ASSISTAI_SRC_DIR="${ASSISTAI_SRC_DIR:-${SOURCES_DIR}/assistai}"
+ECLIPSE_UI_SRC_DIR="${ECLIPSE_UI_SRC_DIR:-${SOURCES_DIR}/eclipse-platform-ui}"
 
-mkdir -p "${WORKSPACE_DIR}"
+mkdir -p "${SOURCES_DIR}"
 
 copy_or_fail() {
   local src="$1"
@@ -39,9 +39,9 @@ copy_or_fail() {
   echo "Copied: ${src} -> ${dst}"
 }
 
-copy_or_fail "${ASSISTAI_SRC_DIR}" "${WORKSPACE_DIR}/assistai-src"
-copy_or_fail "${ECLIPSE_UI_SRC_DIR}" "${WORKSPACE_DIR}/eclipse-platform-ui"
+copy_or_fail "${ASSISTAI_SRC_DIR}" "${SOURCES_DIR}/assistai"
+copy_or_fail "${ECLIPSE_UI_SRC_DIR}" "${SOURCES_DIR}/eclipse-platform-ui"
 
 echo ""
-echo "Workspace bootstrap complete."
+echo "Source bootstrap complete."
 echo "Run scripts/apply_source_patches.sh next."

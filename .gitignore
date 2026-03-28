@@ -26,8 +26,7 @@
 hs_err_pid*
 replay_pid*
 
-# Local development workspace
-workspace/
+# Local development sources
+sources/
 dist/
 .metadata/
-eclipse_llm_full/

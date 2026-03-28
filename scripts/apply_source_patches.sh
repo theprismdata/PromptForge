@@ -3,10 +3,10 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PATCH_DIR="${ROOT_DIR}/source-patches"
-WORKSPACE_DIR="${ROOT_DIR}/workspace"
+SOURCES_DIR="${ROOT_DIR}/sources"
 
-ASSISTAI_DST="${WORKSPACE_DIR}/assistai-src/plugins/com.github.gradusnikov.eclipse.plugin.assistai.main"
-ECLIPSE_UI_DST="${WORKSPACE_DIR}/eclipse-platform-ui/bundles/org.eclipse.ui.ide"
+ASSISTAI_DST="${SOURCES_DIR}/assistai/plugins/com.github.gradusnikov.eclipse.plugin.assistai.main"
+ECLIPSE_UI_DST="${SOURCES_DIR}/eclipse-platform-ui/bundles/org.eclipse.ui.ide"
 
 if [[ ! -d "${ASSISTAI_DST}" ]]; then
   echo "ERROR: AssistAI target not found: ${ASSISTAI_DST}"

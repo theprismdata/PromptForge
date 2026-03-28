@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models defaultChatModelId="5e8d3a9f-c5e2-4c1d-9f3b-a7e6b4d2c1e0">
+  <model uid="5e8d3a9f-c5e2-4c1d-9f3b-a7e6b4d2c1e0" apiType="openai" apiUrl="https://api.openai.com/v1/chat/completions" apiKey="" connectionTimeoutSeconds="10" requestTimeoutSeconds="30" modelName="gpt-4o" temperature="7" vision="true" functionCalling="true"/>
+  <model uid="8d099c40-5a01-483b-878f-bfed8c0d1bbe" apiType="claude" apiUrl="https://api.anthropic.com/v1/messages" apiKey="" connectionTimeoutSeconds="10" requestTimeoutSeconds="30" modelName="claude-sonnet-4-6" temperature="7" vision="true" functionCalling="true"/>
+  <model uid="d2a0d8e1-96f8-4f7c-8ec4-8d8b6677b109" apiType="vllm" apiUrl="http://localhost:8000/v1/chat/completions" apiKey="" connectionTimeoutSeconds="10" requestTimeoutSeconds="30" modelName="Qwen/Qwen2.5-Coder-32B-Instruct" temperature="7" vision="false" functionCalling="true"/>
+</models>

@@ -6,6 +6,7 @@ This directory contains source-level patches corresponding to the release bundle
 
 Patched AssistAI plugin sources:
 - `plugin.xml`: command/menu additions (`AI Settings`)
+- `models-defaults.xml`: default model list (OpenAI/Claude/vLLM)
 - `EclipseIntegrationsMcpServer.java`: `createProject` tool exposure
 - `ProjectService.java`: robust project creation + scaffold fallback
 - `CodeEditingService.java`: auto-create project on file/directory operations
