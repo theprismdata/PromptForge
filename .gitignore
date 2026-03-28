@@ -30,3 +30,4 @@ replay_pid*
 workspace/
 dist/
 .metadata/
+eclipse_llm_full/
