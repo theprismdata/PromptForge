@@ -52,6 +52,9 @@
    <extension point="org.eclipse.ui.startup">
        <startup class="com.github.gradusnikov.eclipse.assistai.PluginStartup"/>
    </extension>
+   <extension point="org.eclipse.ui.startup">
+       <startup class="com.github.gradusnikov.eclipse.assistai.AutoOpenChatStartup"/>
+   </extension>
    
    <!-- 
    AI Code Completion is available via Alt+/ hotkey only.
@@ -98,6 +101,15 @@
                commandId="com.github.gradusnikov.eclipse.assistai.commands.openSettings"
                label="AI Settings"
                style="push">
+         </command>
+         <command
+               commandId="org.eclipse.ui.views.showView"
+               label="AI Chat"
+               style="push">
+            <parameter
+                  name="org.eclipse.ui.views.showView.viewId"
+                  value="com.github.gradusnikov.eclipse.assistai.view.ChatView">
+            </parameter>
          </command>
       </menuContribution>
    </extension>

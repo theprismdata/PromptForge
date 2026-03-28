@@ -4,13 +4,13 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 WORKSPACE_DIR="${ROOT_DIR}/workspace"
 
-# Defaults use the existing local paths from current setup.
-ASSISTAI_SRC_DIR="${ASSISTAI_SRC_DIR:-/Users/prismdata/Documents/entec/arch_group/eclipse_llm/assistai-src}"
-ECLIPSE_UI_SRC_DIR="${ECLIPSE_UI_SRC_DIR:-/Users/prismdata/Documents/entec/arch_group/eclipse_llm/releng-aggregator/eclipse.platform.ui}"
+# Defaults use local workspace paths in this repository.
+ASSISTAI_SRC_DIR="${ASSISTAI_SRC_DIR:-${WORKSPACE_DIR}/assistai-src}"
+ECLIPSE_UI_SRC_DIR="${ECLIPSE_UI_SRC_DIR:-${WORKSPACE_DIR}/eclipse-platform-ui}"
 
 mkdir -p "${WORKSPACE_DIR}"
 
-link_or_fail() {
+copy_or_fail() {
   local src="$1"
   local dst="$2"
   if [[ ! -d "${src}" ]]; then
@@ -18,16 +18,29 @@ link_or_fail() {
     exit 1
   fi
 
+  local src_resolved
+  src_resolved="$(cd "${src}" && pwd -P)"
+  local dst_resolved=""
+  if [[ -d "${dst}" ]]; then
+    dst_resolved="$(cd "${dst}" && pwd -P)"
+  fi
+
+  if [[ -n "${dst_resolved}" && "${src_resolved}" == "${dst_resolved}" ]]; then
+    echo "Using existing local source: ${dst}"
+    return
+  fi
+
   if [[ -L "${dst}" || -e "${dst}" ]]; then
     rm -rf "${dst}"
   fi
 
-  ln -s "${src}" "${dst}"
-  echo "Linked: ${dst} -> ${src}"
+  mkdir -p "${dst}"
+  rsync -a --delete "${src}/" "${dst}/"
+  echo "Copied: ${src} -> ${dst}"
 }
 
-link_or_fail "${ASSISTAI_SRC_DIR}" "${WORKSPACE_DIR}/assistai-src"
-link_or_fail "${ECLIPSE_UI_SRC_DIR}" "${WORKSPACE_DIR}/eclipse-platform-ui"
+copy_or_fail "${ASSISTAI_SRC_DIR}" "${WORKSPACE_DIR}/assistai-src"
+copy_or_fail "${ECLIPSE_UI_SRC_DIR}" "${WORKSPACE_DIR}/eclipse-platform-ui"
 
 echo ""
 echo "Workspace bootstrap complete."

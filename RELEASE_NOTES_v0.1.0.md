@@ -1,25 +1,25 @@
-# PromptForge v0.1.0 Release Notes
+# PromptForge v0.1.0 릴리스 노트
 
 Date: 2026-03-28
 
-## Highlights
+## 주요 변경점
 
-- AI can now request project creation directly from chat flow.
-- If Eclipse command wiring is unavailable, PromptForge creates a Spring-ready scaffold instead of failing.
-- `eclipse-runner` now supports local shell execution via `runShellCommand`.
-- `Window > AI Settings` menu is available for faster model/key access.
+- AI가 채팅 흐름에서 직접 프로젝트 생성을 요청할 수 있습니다.
+- Eclipse 명령 연결이 불가능한 경우 실패하지 않고 Spring 준비 스캐폴드를 생성합니다.
+- `eclipse-runner`가 `runShellCommand`를 통한 로컬 셸 실행을 지원합니다.
+- `Window > AI Settings` 메뉴로 모델/키 설정에 더 빠르게 접근할 수 있습니다.
 
-## Artifact
+## 아티팩트
 
 - `releases/v0.1.0/eclipse-llm-patch-20260328.zip`
 
-## Security / Ops Notes
+## 보안 / 운영 참고
 
-- API keys are expected in Eclipse Secure Storage.
-- If any key was shared in screenshots/logs, rotate and replace immediately.
+- API 키는 Eclipse Secure Storage에 저장하는 것을 권장합니다.
+- 스크린샷/로그로 키가 노출되었으면 즉시 폐기 후 재발급하세요.
 
-## Upgrade Notes
+## 업그레이드 안내
 
-- Close Eclipse before install.
-- Run installer script from bundle.
-- Restart Eclipse with `-clean` once after install.
+- 설치 전에 Eclipse를 종료하세요.
+- 번들 내 설치 스크립트를 실행하세요.
+- 설치 후 Eclipse를 `-clean` 옵션으로 1회 재시작하세요.

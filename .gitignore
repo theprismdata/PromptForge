@@ -29,3 +29,4 @@ replay_pid*
 # Local development workspace
 workspace/
 dist/
+.metadata/

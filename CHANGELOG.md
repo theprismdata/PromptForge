@@ -1,18 +1,18 @@
-# Changelog
+# 변경 이력
 
 ## v0.1.0 - 2026-03-28
 
-Initial public patch bundle for PromptForge.
+PromptForge 첫 공개 패치 번들입니다.
 
-### Added
+### 추가 사항
 
-- Prompt-driven project creation workflow (`eclipse-ide__createProject`)
-- Fallback scaffold generation when command-based project creation is unavailable
-- Shell command tool (`eclipse-runner__runShellCommand`)
-- Automatic project creation in code editing flow when missing (`createFile`/`createDirectories`)
-- Top-level menu shortcut: `Window > AI Settings`
+- 프롬프트 기반 프로젝트 생성 워크플로우 (`eclipse-ide__createProject`)
+- 명령 기반 프로젝트 생성이 불가능할 때 대체 스캐폴드 자동 생성
+- 셸 명령 도구 추가 (`eclipse-runner__runShellCommand`)
+- 코드 편집 흐름에서 프로젝트가 없을 경우 자동 생성 (`createFile`/`createDirectories`)
+- 상단 메뉴 바로가기 추가: `Window > AI Settings`
 
-### Packaging
+### 패키징
 
-- Release artifact: `releases/v0.1.0/eclipse-llm-patch-20260328.zip`
-- Integrity file: `releases/v0.1.0/checksums.sha256`
+- 릴리스 아티팩트: `releases/v0.1.0/eclipse-llm-patch-20260328.zip`
+- 무결성 파일: `releases/v0.1.0/checksums.sha256`
