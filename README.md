@@ -76,14 +76,6 @@ rollback_windows.bat
 rollback_windows.bat "C:\Users\<you>\.eclipse_llm_patch_backups\<timestamp>" "C:\path\to\eclipse-ide"
 ```
 
-## 무결성 검증
-
-압축 해제한 번들 루트에서 실행:
-
-```bash
-cd eclipse-llm-patch-20260328
-shasum -a 256 -c checksums.sha256
-```
 
 ## 개발 워크스페이스 모드
 
