@@ -85,11 +85,6 @@ cd eclipse-llm-patch-20260328
 shasum -a 256 -c checksums.sha256
 ```
 
-## 참고 사항
-
-- 설치 시 `~/.eclipse_llm_patch_backups/` 아래에 백업이 자동 생성됩니다.
-- API 키는 Eclipse Secure Storage에 보관하고, 노출 시 즉시 교체하세요.
-
 ## 개발 워크스페이스 모드
 
 실제 업스트림 소스를 `workspace` 아래로 복사해 두고 PromptForge를 제어 저장소로 사용합니다.
@@ -97,6 +92,15 @@ shasum -a 256 -c checksums.sha256
 ```bash
 cd scripts
 chmod +x bootstrap_workspace.sh apply_source_patches.sh
+./bootstrap_workspace.sh
+./apply_source_patches.sh
+```
+
+다른 환경에서 업스트림 소스 경로가 다르면 환경변수로 지정해 실행하세요:
+
+```bash
+ASSISTAI_SRC_DIR="/path/to/assistai-src" \
+ECLIPSE_UI_SRC_DIR="/path/to/eclipse.platform.ui" \
 ./bootstrap_workspace.sh
 ./apply_source_patches.sh
 ```
