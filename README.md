@@ -56,3 +56,18 @@ shasum -a 256 -c checksums.sha256
 
 - Backups are created automatically during install under `~/.eclipse_llm_patch_backups/`.
 - Keep API keys in Eclipse Secure Storage and rotate immediately if exposed.
+
+## Development Workspace Mode
+
+Use PromptForge as the control repo while editing real upstream sources via symlinked workspace.
+
+```bash
+cd scripts
+chmod +x bootstrap_workspace.sh apply_source_patches.sh
+./bootstrap_workspace.sh
+./apply_source_patches.sh
+```
+
+Then edit/build in:
+- `workspace/assistai-src`
+- `workspace/eclipse-platform-ui`
