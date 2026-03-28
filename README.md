@@ -8,7 +8,7 @@ PromptForge는 에이전트 중심 개발을 위해 구성된 Eclipse + AssistAI
 
 ## 저장소 구성
 
-- `releases/v0.1.0/`: 배포용 패치 번들 및 체크섬
+- `releases/v0.1.1/`: 배포용 패치 번들 및 체크섬
 - `LICENSE`: Apache-2.0 라이선스
 - `CHANGELOG.md`: 릴리스 이력
 
@@ -26,7 +26,7 @@ AssistAI 모델 설정은 배포 후 아래 2계층으로 동작합니다.
 
 ## 빠른 시작 (macOS)
 
-1. `releases/v0.1.0/eclipse-llm-patch-20260328.zip` 파일을 다운로드합니다.
+1. `releases/v0.1.1/eclipse-llm-patch-20260328-v0.1.1.zip` 파일을 다운로드합니다.
 2. 압축을 해제합니다.
 3. 아래 명령을 실행합니다.
 
@@ -60,11 +60,11 @@ cd eclipse-llm-patch-20260328/scripts
 ## 설치 (Windows)
 
 1. Eclipse를 완전히 종료합니다.
-2. `releases/v0.1.0/eclipse-llm-patch-20260328.zip` 압축을 해제합니다.
+2. `releases/v0.1.1/eclipse-llm-patch-20260328-v0.1.1.zip` 압축을 해제합니다.
 3. 압축 해제된 `scripts` 폴더에서 명령 프롬프트(CMD)를 열고 실행합니다.
 
 ```bat
-install_windows.bat "C:\path\to\eclipse-ide" "C:\path\to\eclipse-llm-patch-20260328"
+install_windows.bat "C:\path\to\eclipse-ide" "C:\path\to\eclipse-llm-patch-20260328-v0.1.1"
 ```
 
 또는 `ECLIPSE_HOME`을 지정한 뒤 인자 없이 실행합니다.
@@ -74,7 +74,13 @@ set ECLIPSE_HOME=C:\path\to\eclipse-ide
 install_windows.bat
 ```
 
-그 다음 Eclipse를 `-clean` 옵션으로 1회 실행합니다.
+4. 설치 후 Eclipse를 `-clean` 옵션으로 1회 실행합니다.
+
+## 윈도우 설치 검증
+
+1. Eclipse 실행 후 `Window > Preferences > AssistAI > Models`에서 기본 모델(OpenAI/Claude/vLLM) 목록이 보이는지 확인합니다.
+2. `AI Chat` 뷰에서 `Enter` 전송, `Shift+Enter` 줄바꿈이 동작하는지 확인합니다.
+3. 모델 영역에서 텍스트(모델명) 클릭 시 모델 드롭다운이 열리는지 확인합니다.
 
 ## 롤백 (Windows)
 
@@ -87,6 +93,12 @@ rollback_windows.bat
 ```bat
 rollback_windows.bat "C:\Users\<you>\.eclipse_llm_patch_backups\<timestamp>" "C:\path\to\eclipse-ide"
 ```
+
+## 배포본 사용 시 설정 파일 위치
+
+- 모델 기본값(XML): `plugins/com.github.gradusnikov.eclipse.plugin.assistai.main_*.jar` 내부 `models-defaults.xml`
+- 워크스페이스 사용자 설정:
+  - `<workspace>\.metadata\.plugins\org.eclipse.core.runtime\.settings\com.github.gradusnikov.eclipse.plugin.assistai.main.prefs`
 
 
 ## 개발 소스 모드

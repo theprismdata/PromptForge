@@ -18,6 +18,7 @@ PromptForge 설치형 번들 갱신 릴리스입니다.
 
 - 릴리스 아티팩트: `releases/v0.1.1/eclipse-llm-patch-20260328-v0.1.1.zip`
 - 무결성 파일: `releases/v0.1.1/checksums.sha256`
+- Windows 설치/롤백 스크립트(`install_windows.bat`, `rollback_windows.bat`)를 릴리스 번들에 포함
 
 ## v0.1.0 - 2026-03-28
 
